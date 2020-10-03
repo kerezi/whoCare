@@ -1,6 +1,7 @@
-package com.whocare.android.app.data
+package com.whocare.android.app.data.source
 
 import androidx.lifecycle.LiveData
+import com.whocare.android.app.data.Result
 import com.whocare.android.app.data.dao.NameIdDao
 import com.whocare.android.app.data.model.NameId
 import java.io.IOException

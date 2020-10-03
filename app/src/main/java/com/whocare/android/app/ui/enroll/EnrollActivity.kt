@@ -1,11 +1,8 @@
 package com.whocare.android.app.ui.enroll
 
 import android.app.Activity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.os.Bundle
-import androidx.annotation.StringRes
-import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
@@ -14,8 +11,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
-
+import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.whocare.android.app.R
+import com.whocare.android.app.ui.main.CostsActivity
+
 
 class EnrollActivity : AppCompatActivity() {
 
@@ -57,25 +59,28 @@ class EnrollActivity : AppCompatActivity() {
             }
             if (enrollResult.success != null) {
                 updateUiWithUser(enrollResult.success)
-            }
-            setResult(Activity.RESULT_OK)
+                setResult(Activity.RESULT_OK)
 
-            //Complete and destroy login activity once successful
-            finish()
+                val i = Intent(baseContext, CostsActivity::class.java)
+                i.putExtra("EXTRA_NAME_ID", nameid.text.toString())
+                startActivity(i)                //Complete and destroy login activity once successful
+                finish()
+            }
+
         })
 
         nameid.afterTextChanged {
             enrollViewModel.enrollDataChanged(
-                    nameid.text.toString(),
-                    password.text.toString()
+                nameid.text.toString(),
+                password.text.toString()
             )
         }
 
         password.apply {
             afterTextChanged {
                 enrollViewModel.enrollDataChanged(
-                        nameid.text.toString(),
-                        password.text.toString()
+                    nameid.text.toString(),
+                    password.text.toString()
                 )
             }
 
@@ -83,8 +88,8 @@ class EnrollActivity : AppCompatActivity() {
                 when (actionId) {
                     EditorInfo.IME_ACTION_DONE ->
                         enrollViewModel.enroll(
-                                nameid.text.toString(),
-                                password.text.toString()
+                            nameid.text.toString(),
+                            password.text.toString()
                         )
                 }
                 false
@@ -102,9 +107,9 @@ class EnrollActivity : AppCompatActivity() {
         val displayName = model.displayName
         // TODO : initiate successful logged in experience
         Toast.makeText(
-                applicationContext,
-                "$welcome $displayName",
-                Toast.LENGTH_LONG
+            applicationContext,
+            "$welcome $displayName",
+            Toast.LENGTH_LONG
         ).show()
     }
 

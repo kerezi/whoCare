@@ -3,8 +3,8 @@ package com.whocare.android.app.ui.enroll
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.whocare.android.app.data.EnrollDataSource
-import com.whocare.android.app.data.EnrollRepository
+import com.whocare.android.app.data.source.EnrollDataSource
+import com.whocare.android.app.data.repos.EnrollRepository
 import com.whocare.android.app.data.dao.NameIdDao
 import com.whocare.android.app.data.db.NameIdDB
 

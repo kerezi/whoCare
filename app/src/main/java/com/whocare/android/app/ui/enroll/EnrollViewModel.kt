@@ -2,8 +2,7 @@ package com.whocare.android.app.ui.enroll
 
 import android.util.Patterns
 import androidx.lifecycle.*
-import androidx.lifecycle.Lifecycle.*
-import com.whocare.android.app.data.EnrollRepository
+import com.whocare.android.app.data.repos.EnrollRepository
 
 import com.whocare.android.app.R
 import kotlinx.coroutines.Dispatchers
