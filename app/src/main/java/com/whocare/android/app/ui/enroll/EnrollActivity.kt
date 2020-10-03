@@ -31,7 +31,7 @@ class EnrollActivity : AppCompatActivity() {
         val enroll = findViewById<Button>(R.id.enroll)
         val loading = findViewById<ProgressBar>(R.id.loading)
 
-        enrollViewModel = ViewModelProviders.of(this, EnrollViewModelFactory())
+        enrollViewModel = ViewModelProviders.of(this, EnrollViewModelFactory(application))
                 .get(EnrollViewModel::class.java)
 
         enrollViewModel.enrollFormState.observe(this@EnrollActivity, Observer {

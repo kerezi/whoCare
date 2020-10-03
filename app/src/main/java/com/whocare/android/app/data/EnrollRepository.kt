@@ -1,5 +1,7 @@
 package com.whocare.android.app.data
 
+import androidx.lifecycle.LiveData
+import com.whocare.android.app.data.dao.NameIdDao
 import com.whocare.android.app.data.model.NameId
 
 /**
@@ -8,12 +10,13 @@ import com.whocare.android.app.data.model.NameId
  */
 
 class EnrollRepository(val dataSource: EnrollDataSource) {
+    val getAllNameIds: LiveData<List<NameId>> = dataSource.getAllNameIds
 
     // in-memory cache of the loggedInUser object
     var nameid: NameId? = null
         private set
 
-    val isLoggedIn: Boolean
+    val isEnrolled: Boolean
         get() = nameid != null
 
     init {
@@ -27,7 +30,7 @@ class EnrollRepository(val dataSource: EnrollDataSource) {
         dataSource.leave()
     }
 
-    fun enroll(nameid: String, password: String): Result<NameId> {
+    suspend fun enroll(nameid: String, password: String): Result<NameId> {
         // handle login
         val result = dataSource.enroll(nameid, password)
 
