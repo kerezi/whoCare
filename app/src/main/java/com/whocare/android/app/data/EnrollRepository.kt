@@ -10,36 +10,36 @@ import com.whocare.android.app.data.model.NameId
 class EnrollRepository(val dataSource: EnrollDataSource) {
 
     // in-memory cache of the loggedInUser object
-    var user: NameId? = null
+    var nameid: NameId? = null
         private set
 
     val isLoggedIn: Boolean
-        get() = user != null
+        get() = nameid != null
 
     init {
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
-        user = null
+        nameid = null
     }
 
-    fun logout() {
-        user = null
-        dataSource.logout()
+    fun leave() {
+        nameid = null
+        dataSource.leave()
     }
 
-    fun login(username: String, password: String): Result<NameId> {
+    fun enroll(nameid: String, password: String): Result<NameId> {
         // handle login
-        val result = dataSource.enroll(username, password)
+        val result = dataSource.enroll(nameid, password)
 
         if (result is Result.Success) {
-            setLoggedInUser(result.data)
+            setEnrollData(result.data)
         }
 
         return result
     }
 
-    private fun setLoggedInUser(nameId: NameId) {
-        this.user = nameId
+    private fun setEnrollData(nameId: NameId) {
+        this.nameid = nameId
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
     }

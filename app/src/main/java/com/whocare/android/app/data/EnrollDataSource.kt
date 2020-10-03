@@ -18,7 +18,7 @@ class EnrollDataSource {
         }
     }
 
-    fun logout() {
+    fun leave() {
         // TODO: revoke authentication
     }
 }

@@ -19,7 +19,7 @@ class EnrollViewModel(private val enrollRepository: EnrollRepository) : ViewMode
 
     fun enroll(username: String, password: String) {
         // can be launched in a separate asynchronous job
-        val result = enrollRepository.login(username, password)
+        val result = enrollRepository.enroll(username, password)
 
         if (result is Result.Success) {
             _loginResult.value = EnrollResult(success = EnrollView(displayName = result.data.displayName))
