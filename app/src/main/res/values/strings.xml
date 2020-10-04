@@ -32,5 +32,8 @@
     <string name="add_owner_failed">Add owner failed</string>
     <string name="add_payer_failed">Add payer failed</string>
     <string name="default_font">serif-monospace</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ocr">OCR</string>
 
 </resources>

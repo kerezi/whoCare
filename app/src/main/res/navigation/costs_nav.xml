@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_costFragment_to_addCostFragment"
             app:destination="@id/addCostFragment" />
+        <action
+            android:id="@+id/action_costFragment_to_ocrFragment"
+            app:destination="@id/ocrFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCostFragment"
@@ -39,5 +42,14 @@
         <action
             android:id="@+id/action_productFragment_to_addCostFragment"
             app:destination="@id/addCostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ocrFragment"
+        android:name="com.whocare.android.app.ui.ocr.OcrFragment"
+        android:label="@string/ocr"
+        tools:layout="@layout/fragment_ocr" >
+        <action
+            android:id="@+id/action_ocrFragment_to_costFragment"
+            app:destination="@id/costFragment" />
     </fragment>
 </navigation>
