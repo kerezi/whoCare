@@ -32,7 +32,8 @@ class OcrFragment : Fragment(), IOCRCallBack {
         val view = inflater.inflate(R.layout.fragment_ocr, container, false)
         mIOCRCallBack = this
         mImageUrl =
-            "http://dl.a9t9.com/blog/ocr-online/screenshot.jpg" // Image url to apply OCR API
+            "https://raw.githubusercontent.com/kerezi/whoCare/main/app/src/main/res/drawable/demopic.jpg"
+        // Image url to apply OCR API
         mLanguage = "eng" //Language
         isOverlayRequired = true
 
