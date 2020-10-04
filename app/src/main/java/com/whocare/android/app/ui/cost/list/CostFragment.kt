@@ -47,6 +47,10 @@ class CostFragment : Fragment() {
         view.add_cost.setOnClickListener {
             findNavController().navigate(R.id.action_costFragment_to_addCostFragment)
         }
+
+        view.add_ocr.setOnClickListener {
+            findNavController().navigate(R.id.action_costFragment_to_ocrFragment)
+        }
         return view
     }
 
