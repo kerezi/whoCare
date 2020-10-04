@@ -14,8 +14,9 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.whocare.android.app.R
+import com.whocare.android.app.ui.main.AppViewModelFactory
 import com.whocare.android.app.ui.main.CostsActivity
 
 
@@ -29,12 +30,11 @@ class EnrollActivity : AppCompatActivity() {
         setContentView(R.layout.activity_enroll)
 
         val nameid = findViewById<EditText>(R.id.nameid)
-        val password = findViewById<EditText>(R.id.password)
+        val password = findViewById<EditText>(R.id.description)
         val enroll = findViewById<Button>(R.id.enroll)
         val loading = findViewById<ProgressBar>(R.id.loading)
 
-        enrollViewModel = ViewModelProviders.of(this, EnrollViewModelFactory(application))
-                .get(EnrollViewModel::class.java)
+        enrollViewModel = ViewModelProvider(this, AppViewModelFactory(application)).get(EnrollViewModel::class.java)
 
         enrollViewModel.enrollFormState.observe(this@EnrollActivity, Observer {
             val enrollState = it ?: return@Observer
@@ -59,11 +59,12 @@ class EnrollActivity : AppCompatActivity() {
             }
             if (enrollResult.success != null) {
                 updateUiWithUser(enrollResult.success)
-                setResult(Activity.RESULT_OK)
 
                 val i = Intent(baseContext, CostsActivity::class.java)
                 i.putExtra("EXTRA_NAME_ID", nameid.text.toString())
                 startActivity(i)                //Complete and destroy login activity once successful
+
+                setResult(Activity.RESULT_OK)
                 finish()
             }
 

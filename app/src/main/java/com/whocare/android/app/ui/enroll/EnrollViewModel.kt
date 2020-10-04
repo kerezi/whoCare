@@ -5,16 +5,18 @@ import androidx.lifecycle.*
 import com.whocare.android.app.data.repos.EnrollRepository
 
 import com.whocare.android.app.R
+import com.whocare.android.app.ui.main.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.regex.Pattern
 
 class EnrollViewModel(private val enrollRepository: EnrollRepository) : ViewModel() {
 
     private val _enrollForm = MutableLiveData<EnrollFormState>()
     val enrollFormState: LiveData<EnrollFormState> = _enrollForm
 
-    private val _enrollResult = MutableLiveData<EnrollResult>()
-    val enrollResult: LiveData<EnrollResult> = _enrollResult
+    private val _enrollResult = MutableLiveData<Result<EnrollView>>()
+    val enrollResult: LiveData<Result<EnrollView>> = _enrollResult
 
     fun enroll(nameid: String, password: String) {
         // can be launched in a separate asynchronous job
@@ -24,9 +26,9 @@ class EnrollViewModel(private val enrollRepository: EnrollRepository) : ViewMode
         }
         enrollRepository.getAllNameIds.observeForever(Observer { nameids ->
             if (nameids.any { nid -> nid.userId == nameid }) {
-                _enrollResult.value = EnrollResult(success = EnrollView(displayName = nameid))
+                _enrollResult.value = Result(success = EnrollView(displayName = nameid))
             } else {
-                _enrollResult.value = EnrollResult(error = R.string.enrollment_failed)
+                _enrollResult.value = Result(error = R.string.enrollment_failed)
             }
 
         })
@@ -45,7 +47,7 @@ class EnrollViewModel(private val enrollRepository: EnrollRepository) : ViewMode
     // A placeholder username validation check
     private fun isNameIdValid(nameid: String): Boolean {
         return if (nameid.isNotBlank()) {
-            Patterns.DOMAIN_NAME.matcher(nameid).matches()
+            Pattern.matches("[A-Za-z_0-9]+",nameid)
         } else {
             nameid.isNotBlank()
         }

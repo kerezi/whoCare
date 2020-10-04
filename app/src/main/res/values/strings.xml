@@ -4,13 +4,32 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_nameid">name id</string>
     <string name="prompt_password">Password</string>
+    <string name="prompt_description">Add description</string>
+    <string name="prompt_name">Add name</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="action_enroll">Enroll to whoCare</string>
     <string name="action_enroll_short">Enroll</string>
+    <string name="action_add">add</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_name">Not a valid name</string>
     <string name="invalid_password">Password must be >5 characters</string>
+    <string name="invalid_description">Description must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="enrollment_failed">"Enrollment failed"</string>
+    <string name="add_cost_item">Add cost item</string>
+    <string name="cost_list">Cost list</string>
+    <string name="add_cost">Add Cost</string>
+    <string name="add">Add</string>
+    <string name="category">Category</string>
+    <string name="payer">Payer</string>
+    <string name="owner">Owner</string>
+    <string name="product">Product</string>
+    <string name="price">Price</string>
+    <string name="add_product_failed">Add product failed</string>
+    <string name="add_price_failed">Add price failed</string>
+    <string name="add_owner_failed">Add owner failed</string>
+    <string name="add_payer_failed">Add payer failed</string>
+
 </resources>

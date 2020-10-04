@@ -1,9 +1,9 @@
-package com.whocare.android.app.ui.enroll
+package com.whocare.android.app.ui.main
 
 /**
  * Authentication result : success (user details) or error message.
  */
-data class EnrollResult(
-    val success: EnrollView? = null,
+data class Result<T>(
+    val success: T? = null,
     val error: Int? = null
 )

@@ -6,10 +6,10 @@ import androidx.room.PrimaryKey
 import androidx.room.Relation
 import java.time.LocalDateTime
 
-@Entity(tableName = "product_price_table")
+@Entity(tableName = "price_table")
 data class Price (
     @PrimaryKey(autoGenerate = true) val id: Int,
     val productId: Int,
-    val dateTime: LocalDateTime,
-    val price: Number
+    val dateTime: String,
+    val price: Double
 )

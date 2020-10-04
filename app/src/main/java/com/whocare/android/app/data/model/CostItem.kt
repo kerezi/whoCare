@@ -8,7 +8,8 @@ import java.time.LocalDateTime
 data class CostItem (
     @PrimaryKey(autoGenerate = true) val costItemId: Int,
     val costId: Int,
-    val productPriceId: Int,
+    val productId: Int,
+    val priceId: Int,
     val ownerId: Int,
     val payerId: Int
 )

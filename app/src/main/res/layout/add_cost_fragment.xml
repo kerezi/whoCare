@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    app:layoutManager="LinearLayoutManager"
+    tools:context=".ui.cost.add.AddCostFragment"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:id="@+id/product_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/product_add"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:clickable="true"
+            android:contentDescription="@string/add"
+            android:focusable="true"
+            android:src="@drawable/ic_plus"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/product"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:autofillHints="@string/product"
+            android:visibility="visible"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/price_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_ll"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/price_add"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:clickable="true"
+            android:contentDescription="@string/add"
+            android:focusable="true"
+            android:src="@drawable/ic_plus"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:autofillHints="@string/price"
+            android:visibility="visible"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/owner_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price_ll"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/owner_add"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:clickable="true"
+            android:contentDescription="@string/add"
+            android:focusable="true"
+            android:src="@drawable/ic_plus"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/owner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:autofillHints="@string/owner"
+            android:visibility="visible"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/payer_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/owner_ll"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/payer_add"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:clickable="true"
+            android:contentDescription="@string/add"
+            android:focusable="true"
+            android:src="@drawable/ic_plus"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/payer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:autofillHints="@string/payer"
+            android:visibility="visible"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/category_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payer_ll"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/category_add"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:clickable="true"
+            android:contentDescription="@string/add"
+            android:focusable="true"
+            android:src="@drawable/ic_plus"
+            android:tint="@color/colorPrimaryDark"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:autofillHints="@string/category"
+            android:visibility="visible"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/add_cost_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:contentDescription="@string/add_cost_item"
+        android:src="@drawable/ic_money"
+        android:text="@string/add_cost_item"
+        android:tint="@color/design_default_color_background"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_ll"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cost_items"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_cost_item"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>
