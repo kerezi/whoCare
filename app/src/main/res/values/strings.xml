@@ -31,5 +31,6 @@
     <string name="add_price_failed">Add price failed</string>
     <string name="add_owner_failed">Add owner failed</string>
     <string name="add_payer_failed">Add payer failed</string>
+    <string name="default_font">serif-monospace</string>
 
 </resources>
